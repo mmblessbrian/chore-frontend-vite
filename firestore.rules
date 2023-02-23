@@ -1,0 +1,7 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /chores/{chore} {
+      allow read, create, update, delete: if request.auth != null && (request.auth.uid == 'b2keyv3IakcCTOYtkWGt7kuc4oN2' || request.auth.uid == 'duY1SSjSuhPcqS5FH8gopvUMjBH2');
+    }
+  }
+}
